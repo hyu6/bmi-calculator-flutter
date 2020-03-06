@@ -7,11 +7,13 @@ class ResultsPage extends StatelessWidget {
   ResultsPage(
       {@required this.bmiResult,
       @required this.resultText,
-      @required this.interpretation});
+      @required this.interpretation,
+      @required this.resultTextStyle});
 
   final String bmiResult;
   final String resultText;
   final String interpretation;
+  final TextStyle resultTextStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class ResultsPage extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     resultText.toUpperCase(),
-                    style: kResultTextStyle,
+                    style: resultTextStyle,
                   ),
                   Text(
                     bmiResult,

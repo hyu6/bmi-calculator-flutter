@@ -1,5 +1,8 @@
 import 'dart:math';
 
+import 'package:bmi_calculator/constants.dart';
+import 'package:flutter/material.dart';
+
 class BMICalculator {
   BMICalculator({this.height, this.weight});
 
@@ -30,6 +33,16 @@ class BMICalculator {
       return 'Your body weight is normal.\nGreat!';
     } else {
       return 'Your body weight is low.\nYou can eat more.';
+    }
+  }
+
+  TextStyle getResultTextStyle() {
+    if (_bmi >= 25) {
+      return kResultTextStyle.copyWith(color: Color(0xFFE53935));
+    } else if (_bmi >= 18.5) {
+      return kResultTextStyle.copyWith(color: Color(0xFF24D876));
+    } else {
+      return kResultTextStyle.copyWith(color: Color(0xFF1E88E5));
     }
   }
 }
